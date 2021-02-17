@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import no from 'not-defined'
+import { PostCard } from './components'
 
 function App () {
   const [data, setData] = useState([])
@@ -36,24 +37,13 @@ function App () {
         >
           {data &&
             data.length > 0 &&
-            data.map(item => (
-              <div
-                key={item.id}
-                style={{
-                  width: 300,
-                  height: 'auto',
-                  border: '1px solid black',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  flexDirection: 'column',
-                  margin: 10,
-                  padding: 5
-                }}
-              >
-                <div style={{}}>{item.name}</div>
-                <div style={{}}>{item.content}</div>
-                <div style={{}}>{item.like.count}</div>
-              </div>
+            data.map(({ id, title, content, like }) => (
+              <PostCard
+                key={id}
+                title={title}
+                Content={<p>{content}</p>}
+                like={like}
+              ></PostCard>
             ))}
         </div>
       </div>

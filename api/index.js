@@ -18,7 +18,7 @@ app.get('/post', (req, res) => {
     },
     {
       id: 2,
-      name: 'Django',
+      title: 'Django',
       content: _CONTENT,
       like: {
         count: 2,
@@ -30,13 +30,13 @@ app.get('/post', (req, res) => {
     },
     {
       id: 3,
-      name: 'Pinco',
+      title: 'Pinco',
       content: _CONTENT,
       like: { count: 0, data: [] }
     },
     {
       id: 4,
-      name: 'Grace',
+      title: 'Grace',
       content: 'ciao',
       like: { count: 1, data: [{ id: 4, name: 'Grace' }] }
     }
