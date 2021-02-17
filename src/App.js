@@ -25,13 +25,36 @@ function App () {
   return (
     <div className='App'>
       <div>
-        <button onClick={submit}>call ap</button>
-        <div style={{ display: 'flex', width: 500 }}>
-          <ul>
-            {data &&
-              data.length > 0 &&
-              data.map(item => <li key={item.id}>{item.name}</li>)}
-          </ul>
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          {data &&
+            data.length > 0 &&
+            data.map(item => (
+              <div
+                key={item.id}
+                style={{
+                  width: 300,
+                  height: 'auto',
+                  border: '1px solid black',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  margin: 10,
+                  padding: 5
+                }}
+              >
+                <div style={{}}>{item.name}</div>
+                <div style={{}}>{item.content}</div>
+                <div style={{}}>{item.like.count}</div>
+              </div>
+            ))}
         </div>
       </div>
     </div>
