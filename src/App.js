@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import no from 'not-defined'
+import { PostCard } from './components'
 
 function App () {
   const [data, setData] = useState([])
@@ -25,13 +26,25 @@ function App () {
   return (
     <div className='App'>
       <div>
-        <button onClick={submit}>call ap</button>
-        <div style={{ display: 'flex', width: 500 }}>
-          <ul>
-            {data &&
-              data.length > 0 &&
-              data.map(item => <li key={item.id}>{item.name}</li>)}
-          </ul>
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          {data &&
+            data.length > 0 &&
+            data.map(({ id, title, content, like }) => (
+              <PostCard
+                key={id}
+                title={title}
+                Content={<p>{content}</p>}
+                like={like}
+              ></PostCard>
+            ))}
         </div>
       </div>
     </div>
