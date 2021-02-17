@@ -8,10 +8,36 @@ app.use(cors())
 app.get('/post', (req, res) => {
   //console.log('OK')
   const data = [
-    { id: 1, name: 'Davide' },
-    { id: 2, name: 'Django' },
-    { id: 3, name: 'Pinco' },
-    { id: 4, name: 'Grace' }
+    {
+      id: 1,
+      title: 'Davide',
+      content: '',
+      like: { count: 340, data: [{ id: 4, name: 'Grace' }] }
+    },
+    {
+      id: 2,
+      name: 'Django',
+      content: '',
+      like: {
+        count: 2,
+        data: [
+          { id: 4, name: 'Grace' },
+          { id: 2, name: 'Pinco' }
+        ]
+      }
+    },
+    {
+      id: 3,
+      name: 'Pinco',
+      content: '',
+      like: { count: 0, data: [] }
+    },
+    {
+      id: 4,
+      name: 'Grace',
+      content: '',
+      like: { count: 1, data: [{ id: 4, name: 'Grace' }] }
+    }
   ]
   res.send(data)
 })
