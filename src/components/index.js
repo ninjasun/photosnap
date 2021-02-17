@@ -1,3 +1,3 @@
 import { PostCard } from './cards/PostCard'
-
-export { PostCard }
+import { PageContainer } from './common/PageContainer'
+export { PostCard, PageContainer }
