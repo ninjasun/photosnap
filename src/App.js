@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import './App.scss'
 import no from 'not-defined'
 import { PostCard } from './components'
 
