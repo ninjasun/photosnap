@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import no from 'not-defined'
 
 function App () {
   const [data, setData] = useState([])
