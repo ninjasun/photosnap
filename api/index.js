@@ -10,7 +10,8 @@ app.get('/post', (req, res) => {
   const data = [
     { id: 1, name: 'Davide' },
     { id: 2, name: 'Django' },
-    { id: 3, name: 'Pinco' }
+    { id: 3, name: 'Pinco' },
+    { id: 4, name: 'Grace' }
   ]
   res.send(data)
 })
