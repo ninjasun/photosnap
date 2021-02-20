@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import no from 'not-defined'
 import { PageContainer, PostCard } from '../components'
 
 export { Home }
@@ -11,7 +10,7 @@ function Home () {
       try {
         const res = await fetch('http://localhost:3001/post')
         const data = await res.json()
-        console.log(data)
+        //console.log(data)
         setData(data)
       } catch (err) {
         console.error(err)

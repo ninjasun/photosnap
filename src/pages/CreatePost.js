@@ -12,14 +12,14 @@ function CreatePost () {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    console.log('values ', formState)
+    //console.log('values ', formState)
     try {
       const data = await fetch('http://localhost:3001/post', {
         method: 'POST',
         body: JSON.stringify(formState),
         headers
       })
-      console.log(data)
+      //console.log(data)
     } catch (err) {
       console.error(err)
     }
@@ -28,8 +28,6 @@ function CreatePost () {
   const handleChange = (name, e) => {
     setFormState(param => ({ ...param, [name]: e.target.value }))
   }
-
-  const handleChangeContent = e => {}
 
   const { title, content } = formState
   return (

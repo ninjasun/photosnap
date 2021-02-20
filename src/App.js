@@ -2,32 +2,32 @@ import './App.scss'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Home, CreatePost, Auth } from './pages'
-import { Layout, Header, Footer } from './common'
-import { AuthProvider } from './provider/useAuth'
+import { Layout, Header, Footer, PrivateRoute } from './common'
+import { AuthProvider } from './hooks/'
 
 function App () {
   return (
     <div className='App'>
-      <AuthProvider>
-        <Router>
+      <Router>
+        <AuthProvider>
           <Layout Header={<Header />} Footer={<Footer />}>
             <Switch>
               <Route path='/login'>
                 <Auth />
               </Route>
-              <Route path='/create-post'>
+              <PrivateRoute path='/create-post'>
                 <CreatePost />
-              </Route>
-              <Route path='/' exact>
+              </PrivateRoute>
+              <PrivateRoute path='/' exact>
                 <Home />
-              </Route>
-              <Route path='*'>
+              </PrivateRoute>
+              <PrivateRoute path='*'>
                 <Home />
-              </Route>
+              </PrivateRoute>
             </Switch>
           </Layout>
-        </Router>
-      </AuthProvider>
+        </AuthProvider>
+      </Router>
     </div>
   )
 }
