@@ -70,7 +70,13 @@ app.post('/like', (req, res) => {
   res.status(201)
   res.send()
 })
-
+/** get all likes */
+app.get('/likes', (req, res) => {
+  //console.log('OK')
+  res.status(200)
+  res.send(likes)
+})
+/*** get all post */
 app.get('/post', (req, res) => {
   //console.log('OK')
   res.status(200)
@@ -133,7 +139,7 @@ app.delete('/post/:id', (req, res) => {
 
 app.get('/post/:id', (req, res) => {
   //console.log('OK')
-  console.log(req.body)
+
   const { title, content } = req.body
   const newPost = {
     title,
