@@ -1,3 +1,4 @@
 import { Home } from './Home'
 import { CreatePost } from './CreatePost'
-export { Home, CreatePost }
+import { Auth } from './Auth'
+export { Home, CreatePost, Auth }

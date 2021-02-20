@@ -14,7 +14,7 @@ function CreatePost () {
     e.preventDefault()
     console.log('values ', formState)
     try {
-      const data = await fetch('http://localhost:3000/post', {
+      const data = await fetch('http://localhost:3001/post', {
         method: 'POST',
         body: JSON.stringify(formState),
         headers

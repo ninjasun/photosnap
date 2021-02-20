@@ -9,7 +9,7 @@ function Home () {
   useEffect(() => {
     async function fetchData () {
       try {
-        const res = await fetch('http://localhost:3000/post')
+        const res = await fetch('http://localhost:3001/post')
         const data = await res.json()
         console.log(data)
         setData(data)

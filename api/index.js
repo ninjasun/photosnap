@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 var cors = require('cors')
-const port = 3000
+const port = 3001
 
 app.use(cors())
 var bodyParser = require('body-parser')
@@ -83,6 +83,40 @@ app.get('/post/:id', (req, res) => {
   data.push(newPost)
   res.status(201)
   res.send(newPost)
+})
+
+const users = [
+  {
+    id: 1,
+    nome: 'Davide',
+    password: 'password',
+    role: 'Developer',
+    isAuth: false
+  },
+  {
+    id: 2,
+    nome: 'Grace',
+    password: 'password',
+    role: 'Developer',
+    isAuth: false
+  }
+]
+app.post('/login', (req, res) => {
+  try {
+    const { username, password } = req.body
+    let user = null
+    console.log('username ', username)
+    user = users.filter(user => {
+      return user.nome === username && user.password === password
+    })
+
+    console.log('user ', user)
+
+    res.status(200)
+    res.send(user[0])
+  } catch (err) {
+    console.error(err)
+  }
 })
 
 app.listen(port, () => {
