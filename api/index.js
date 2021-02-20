@@ -63,19 +63,27 @@ let data = [
   }
 ]
 
-app.post('/like', (req, res) => {
+app.post('/likes', (req, res) => {
   const { PostId } = req.body
   //get author id
 
   res.status(201)
   res.send()
 })
-/** get all likes */
-app.get('/likes', (req, res) => {
+
+app.put('/likes/:postId', (req, res) => {
+  //get author id
+
+  res.status(200)
+  res.send()
+})
+/** get all likes by post id */
+app.get('/likes/:postId', (req, res) => {
   //console.log('OK')
   res.status(200)
   res.send(likes)
 })
+/**get like by */
 /*** get all post */
 app.get('/post', (req, res) => {
   //console.log('OK')
@@ -126,7 +134,6 @@ app.put('/post/:id', (req, res) => {
 /* update a post **/
 app.delete('/post/:id', (req, res) => {
   //console.log('OK')
-
   data = data.filter(post => {
     if (post.id !== req.params.id) {
       return post

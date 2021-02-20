@@ -31,12 +31,12 @@ function Home () {
       >
         {data &&
           data.length > 0 &&
-          data.map(({ id, title, content, like }) => (
+          data.map(({ title, content, ...rest }) => (
             <PostCard
-              key={id}
+              key={rest.id}
               title={title}
               Content={<p>{content}</p>}
-              like={like}
+              {...rest}
             ></PostCard>
           ))}
       </div>
