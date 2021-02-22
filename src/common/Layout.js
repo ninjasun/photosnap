@@ -5,7 +5,17 @@ function Layout ({ Header, Footer, children }) {
   return (
     <div className='layout'>
       {Header}
-      {children}
+      <main
+        style={{
+          flexFlow: 'row nowrap',
+          maxWidth: 935,
+          paddingTop: 30,
+          display: 'flex'
+        }}
+      >
+        {children}
+      </main>
+
       {Footer}
     </div>
   )
