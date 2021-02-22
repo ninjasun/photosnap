@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { PageContainer, PostCard } from '../components'
+import { PageContainer, PostCard, ProfilesCarousel } from '../components'
 
 export { Home }
 function Home () {
@@ -22,23 +22,31 @@ function Home () {
     <PageContainer>
       <div
         style={{
-          display: 'flex',
-          width: '100%',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          alignItems: 'center'
+          float: 'left',
+          marginRight: 28,
+          maxWidth: 614,
+          width: '100%'
         }}
       >
-        {data &&
-          data.length > 0 &&
-          data.map(({ id, title, content, like }) => (
-            <PostCard
-              key={id}
-              title={title}
-              Content={<p>{content}</p>}
-              like={like}
-            ></PostCard>
-          ))}
+        <ProfilesCarousel />
+        <div
+          style={{
+            flexDirection: 'column',
+            paddingBottom: 6400,
+            paddingTop: 0
+          }}
+        >
+          {data &&
+            data.length > 0 &&
+            data.map(({ title, content, ...rest }) => (
+              <PostCard
+                key={rest.id}
+                title={title}
+                Content={<p>{content}</p>}
+                {...rest}
+              ></PostCard>
+            ))}
+        </div>
       </div>
     </PageContainer>
   )
