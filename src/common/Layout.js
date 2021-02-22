@@ -6,16 +6,20 @@ function Layout ({ Header, Footer, children }) {
     <div className='layout'>
       {Header}
       <main
-        style={{
-          flexFlow: 'row nowrap',
-          maxWidth: 935,
-          paddingTop: 30,
-          display: 'flex'
-        }}
+        style={{ display: 'flex', width: '100%', justifyContent: 'center' }}
       >
-        {children}
+        <section
+          style={{
+            flexFlow: 'row nowrap',
+            maxWidth: 935,
+            paddingTop: 30,
+            display: 'flex',
+            width: '100%'
+          }}
+        >
+          {children}
+        </section>
       </main>
-
       {Footer}
     </div>
   )
