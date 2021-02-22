@@ -16,10 +16,11 @@ function Header () {
         padding: 0,
         position: 'relative',
         margin: 0,
-        borderBottom: '1px solid rgba(var(--b6a,219,219,219),1)',
+        borderBottom: '1px solid rgba(219,219,219,1)',
         transition: 'height .2s ease-in-out',
         width: '100%',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
       }}
     >
       <div
